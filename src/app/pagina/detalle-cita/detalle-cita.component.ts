@@ -30,23 +30,20 @@ export class DetalleCitaComponent {
     this.obtenerCita();
     this.especialidades = [];
     this.cargarEspecialidades();
+    this.route.params.subscribe((params) => {
+      this.codigoCita = params['codigo'];
+    });
   }
 
   public obtenerCita() {
-    // Validar si this.codigoCita es un número antes de hacer la solicitud
-    if (!isNaN(this.codigoCita as any)) {
-      this.pacienteService.verDetalleCita(+this.codigoCita).subscribe({
-        next: (data) => {
-          this.registroCitaDTO = data.respuesta;
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
-    } else {
-      console.error('El código de la cita no es un número válido.');
-      // Puedes manejar este caso según tus necesidades, por ejemplo, mostrar un mensaje al usuario.
-    }
+    this.pacienteService.verDetalleCita(this.codigoCita).subscribe({
+      next: data => {
+        this.registroCitaDTO = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 
 
