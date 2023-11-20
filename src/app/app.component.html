@@ -25,8 +25,10 @@
         <div *ngIf=" userType === 'paciente'">
           <!-- Bloque de etiquetas para usuario paciente -->
           <ul class="nav col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a routerLink="#" class="nav-link px-2 text-white">PQRS</a></li>
-            <li><a routerLink="#" class="nav-link px-2 text-white">Historial Médico</a></li>
+            <li><a routerLink="crear-pqrs" class="nav-link px-2 text-white">Gestion PQRS</a></li>
+            <li><a routerLink="historial-citas-paciente" class="nav-link px-2 text-white">Historial Citas</a></li>
+            <li><a routerLink="agendar-cita" class="nav-link px-2 text-white">Agendar Cita</a></li>
+            <li><a routerLink="modificar-paciente" class="nav-link px-2 text-white">Actualizar Datos</a></li>
             <li><a routerLink="agendar-cita" class="nav-link px-2 text-white">Agendar Cita</a></li>
             <li>
               <ul>
