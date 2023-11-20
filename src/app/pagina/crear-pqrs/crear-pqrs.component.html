@@ -1,0 +1,77 @@
+<div class="card">
+  <div class="card-header ps-5 pt-4 pb-4">
+    <h5 class="mb-0">
+      <i class="fa-solid fa-user-plus me-3"></i>Registro de una PQRS
+    </h5>
+  </div>
+
+  <div class="card-body p-5">
+    <form #f="ngForm">
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Tipo de PQRS: </label>
+        <div class="col-sm-5">
+          <select
+                  name="tipo"
+                  required
+                  class="form-select"
+                  [(ngModel)]="registroPQRSDTO.tipo"
+          >
+            <option value="" selected>Seleccione un tipo de motivo</option>
+            <option [value]="item" *ngFor="let item of tiposPqrs; index as i">
+              {{ item }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Seleccione la cita: </label>
+        <div class="col-sm-5">
+          <select
+                  name="tipoSangre"
+                  required
+                  class="form-select"
+                  [(ngModel)]="registroPQRSDTO.codigoCita"
+          >
+            <option value="" selected>Seleccione la cita</option>
+            <option
+                    [value]="item.codigoCita"
+                    *ngFor="let item of citaPacienteDTO; index as i"
+            >
+              {{ item.codigoCita }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Motivo: </label>
+        <div class="col-sm-10">
+          <textarea
+                  #motivo="ngModel"
+                  [ngClass]="
+              motivo.invalid && (motivo.dirty || motivo.touched)
+                ? 'is-invalid'
+                : ''
+            "
+                  type="text"
+                  [(ngModel)]="registroPQRSDTO.motivo"
+                  name="motivo"
+                  required
+                  class="form-control"
+          ></textarea>
+        </div>
+      </div>
+
+      <button
+              (click)="crearPqrs()"
+              class="btn btn-primary"
+              type="submit"
+              [disabled]="f.invalid"
+      >
+        <i class="fa-solid fa-circle-plus me-1"></i>Crear PQRS
+      </button>
+      <app-alerta [alerta]="alerta"></app-alerta>
+    </form>
+  </div>
+</div>

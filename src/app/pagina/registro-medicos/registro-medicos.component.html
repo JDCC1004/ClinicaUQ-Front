@@ -1,0 +1,135 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <h5 class="mb-4">Gestionar Médicos</h5>
+      <div class="input-group mb-3">
+        <input placeholder="Buscar médico" class="form-control">
+        <button class="btn btn-primary ms-2">Buscar</button>
+      </div>
+      <div class="container" style="width: auto;">
+        <table class="table table-striped table-hover">
+          <thead class="table-info">
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Especialidad</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody class="table-group-divider">
+          <tr *ngFor="let item of medicos">
+            <td>{{item.codigo}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.especialidad}}</td>
+            <td><a routerLink="/detalleMedico/{{item.codigo}}"><i class="fa-solid fa-circle-info me-2"></i>Ver detalle</a></td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="btn-group" role="group">
+          <button (click)="registrar()" class="btn btn-primary" type="submit" [disabled]="f.invalid || !sonIguales()">
+            <i class="fa-solid fa-circle-plus me-1"></i>Guardar
+          </button>
+          <button class="btn btn-primary" type="submit" [disabled]="f.invalid || !sonIguales()">
+            <i class="fa-solid fa-circle-plus me-1"></i>Editar
+          </button>
+          <button class="btn btn-primary" type="submit" [disabled]="f.invalid || !sonIguales()">
+            <i class="fa-solid fa-circle-plus me-1"></i>Eliminar
+          </button>
+        </div>
+        <app-alerta [alerta]="alerta"></app-alerta>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <H5 class="mb-4">Nuevo Médico</H5>
+      <form #f="ngForm">
+        <div class="mb-3">
+          <label class="form-label">Correo electrónico:</label>
+          <input #correo="ngModel" [ngClass]="{'form-control': true, 'is-invalid': correo.invalid && (correo.dirty || correo.touched)}"
+                 type="email" name="correo" required email [(ngModel)]="registroMedicoDTO.correo" />
+          <div class="invalid-feedback" *ngIf="correo.invalid && (correo.dirty || correo.touched)">Correo electrónico no válido</div>
+        </div>
+
+
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Contraseña: </label>
+          <div class="col-sm-10">
+            <input #password="ngModel"
+                   [ngClass]="password.invalid && (password.dirty || password.touched) ? 'is-invalid' : ''" type="password"
+                   name="password" class="form-control" required [(ngModel)]="registroMedicoDTO.password" />
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Repetir contraseña: </label>
+          <div class="col-sm-10">
+            <input #confirmaPassword="ngModel"
+                   [ngClass]="confirmaPassword.invalid && (confirmaPassword.dirty || confirmaPassword.touched) ? 'is-invalid' : ''"
+                   type="password" name="confirmaPassword" class="form-control" required
+                   [(ngModel)]="registroMedicoDTO.confirmaPassword" />
+          </div>
+        </div>
+        <p *ngIf="!sonIguales()">Las contraseñas no coinciden</p>
+
+        <div class="mb-3">
+          <label class="form-label">Nombre:</label>
+          <input #nombre="ngModel" [ngClass]="{'form-control': true, 'is-invalid': nombre.invalid && (nombre.dirty || nombre.touched)}"
+                 type="text" name="nombre" required [(ngModel)]="registroMedicoDTO.nombre" />
+          <div class="invalid-feedback" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">Campo obligatorio</div>
+        </div>
+
+
+        <div class="mb-3">
+          <label class="form-label">Cédula:</label>
+          <input #cedula="ngModel" [ngClass]="{'form-control': true, 'is-invalid': cedula.invalid && (cedula.dirty || cedula.touched)}"
+                 type="text" name="cedula" required [(ngModel)]="registroMedicoDTO.cedula" />
+          <div class="invalid-feedback" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">Campo obligatorio</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Teléfono:</label>
+          <input #telefono="ngModel" [ngClass]="{'form-control': true, 'is-invalid': telefono.invalid && (telefono.dirty || telefono.touched)}"
+                 type="text" name="telefono" required [(ngModel)]="registroMedicoDTO.telefono" />
+          <div class="invalid-feedback" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">Campo obligatorio</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Ciudad:</label>
+          <select name="ciudad" required class="form-select" [(ngModel)]="registroMedicoDTO.ciudad">
+            <option value="" selected>Seleccione una ciudad</option>
+            <option [value]="item" *ngFor="let item of ciudades; index as i">{{item}}</option>
+          </select>
+          <div class="invalid-feedback" *ngIf="!registroMedicoDTO.ciudad">Seleccione una ciudad</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Especialidad:</label>
+          <select name="especialidad" required class="form-select" [(ngModel)]="registroMedicoDTO.especialidad">
+            <option value="" selected>Seleccione una especialidad</option>
+            <option [value]="item" *ngFor="let item of especialidad; index as i">{{item}}</option>
+          </select>
+          <div class="invalid-feedback" *ngIf="!registroMedicoDTO.especialidad">Seleccione una especialidad</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Hora inicio:</label>
+          <input #horaInicio="ngModel" [ngClass]="{'form-control': true, 'is-invalid': horaInicio.invalid && (horaInicio.dirty || horaInicio.touched)}"
+                 type="text" name="horaInicio" required [(ngModel)]="registroMedicoDTO.horaInicio" />
+          <div class="invalid-feedback" *ngIf="horaInicio.invalid && (horaInicio.dirty || horaInicio.touched)">Campo obligatorio</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Hora fin:</label>
+          <input #horaFin="ngModel" [ngClass]="{'form-control': true, 'is-invalid': horaFin.invalid && (horaFin.dirty || horaFin.touched)}"
+                 type="text" name="horaFin" required [(ngModel)]="registroMedicoDTO.horaFin" />
+          <div class="invalid-feedback" *ngIf="horaFin.invalid && (horaFin.dirty || horaFin.touched)">Campo obligatorio</div>
+        </div>
+        <div class="mb-3">
+          <button (click)="registrar()" class="btn btn-primary" type="submit" [disabled]="f.invalid || !sonIguales()">
+            <i class="fa-solid fa-circle-plus me-1"></i>Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

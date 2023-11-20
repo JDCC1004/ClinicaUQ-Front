@@ -1,0 +1,56 @@
+
+<div class="card">
+    <div class="card-header ps-5 pt-4 pb-4">
+        <h5 class="mb-0">
+            <i class="fa-solid fa-file-circle-plus me-2"></i>Detalle Cita
+        </h5>
+    </div>
+    <div class="card-body p-5">
+        <form #f="ngForm" >
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Motivo Consulta:</label>
+                <div class="col-sm-10">
+                  <label class="form-control">{{
+                    detalleCitaMedicoDTO?.codigo
+                  }}</label>
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Diagnostico:</label>
+                <div class="col-sm-10">
+                  <label class="form-control">{{
+                    detalleCitaMedicoDTO?.codigoPaciente
+                  }}</label>
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Fecha Cita:</label>
+                <div class="col-sm-10">
+                  <label class="form-control">{{
+                    detalleCitaMedicoDTO?.fechaCita
+                  }}</label>
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Motivo Consulta:</label>
+                <div class="col-sm-10">
+                  <label class="form-control">{{
+                    detalleCitaMedicoDTO?.nombrePaciente
+                  }}</label>
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Motivo Consulta:</label>
+                <div class="col-sm-10">
+                  <label class="form-control">{{
+                    detalleCitaMedicoDTO?.estadoCita
+                  }}</label>
+                </div>
+              </div>
+        </form>
+    </div>
+</div>

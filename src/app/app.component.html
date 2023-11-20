@@ -1,0 +1,94 @@
+<header class="p-3 text-bg-primary">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a routerLink="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <img src="assets/img/logo.png" />
+        <span class="fs-4 ms-3 me-3">{{ title }}</span>
+      </a>
+      <div *ngIf="!isLogged; else loggedInBlock">
+        <!-- Bloque de etiquetas para usuario no autenticado -->
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"></ul>
+        <div class="text-end mb-md-0">
+          <button
+            type="button"
+            routerLink="/login"
+            class="btn btn-outline-light me-2">
+            Login
+          </button>
+          <button type="button" routerLink="/registro" class="btn btn-success">
+            Sign-up
+          </button>
+        </div>
+      </div>
+
+      <ng-template #loggedInBlock>
+        <div *ngIf=" userType === 'paciente'">
+          <!-- Bloque de etiquetas para usuario paciente -->
+          <ul class="nav col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a routerLink="#" class="nav-link px-2 text-white">PQRS</a></li>
+            <li><a routerLink="#" class="nav-link px-2 text-white">Historial Médico</a></li>
+            <li><a routerLink="agendar-cita" class="nav-link px-2 text-white">Agendar Cita</a></li>
+            <li>
+              <ul>
+                <li><a routerLink="#" class="nav-link px-2 text-white">{{userName}}</a></li>
+                <li>{{userType}}</li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+
+        <div *ngIf="userType === 'medico'">
+          <!-- Bloque de etiquetas para usuario médico -->
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a routerLink="#" class="nav-link px-2 text-white">Historial</a></li>
+            <li><a routerLink="#" class="nav-link px-2 text-white">Citas</a></li>
+            <li>
+              <ul >
+                <li><a routerLink="#" class="nav-link px-2 text-white">{{userName}}</a></li>
+                <li>{{userType}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div *ngIf="userType === 'admin'">
+          <!-- Bloque de etiquetas para usuario administrador -->
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a routerLink="#" class="nav-link px-2 text-white">PQRS</a></li>
+            <li><a routerLink="#" class="nav-link px-2 text-white">Gestionar Médico</a></li>
+            <li>
+              <ul>
+                <li><a class="nav-link px-2 text-white">{{userName}}</a></li>
+                <li>{{userType}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <button type="button" (click)="logout()" class="btn btn-danger">Logout</button>
+      </ng-template>
+    </div>
+  </div>
+</header>
+
+<div class="seccion-pagina p-4">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+
+    <div class="col-md-4 d-flex align-items-center">
+      <span class="mb-3 mb-md-0 text-muted">&copy; 2023 Universidad del Quindío</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-x-twitter fs-5"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram fs-5"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-facebook fs-5"></i></a></li>
+    </ul>
+
+  </footer>
+</div>

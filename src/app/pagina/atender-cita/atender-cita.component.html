@@ -1,0 +1,103 @@
+<div class="card">
+    <div class="card-header ps-5 pt-4 pb-4">
+        <h5 class="mb-0">
+            <i class="fa-solid fa-file-circle-plus me-2"></i>Atender Cita Medica
+        </h5>
+    </div>
+    <div class="card-body p-5">
+        <form #f="ngForm" (ngSubmit)="atenderCita()">
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Id de la Cita: </label>
+                <div class="col-sm-10">
+                    <input
+                        #codigoCita="ngModel"
+                        [ngClass]="
+              codigoCita.invalid && (codigoCita.dirty || codigoCita.touched)
+                ? 'is-invalid'
+                : ''
+            "
+                        type="text"
+                        [(ngModel)]="atenderCitaDTO.codigoCita"
+                        name="idCita"
+                        required
+                        class="form-control"
+                    />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Tratamiento: </label>
+                <div class="col-sm-10">
+                    <input
+                        #tratamiento="ngModel"
+                        [ngClass]="
+              tratamiento.invalid && (tratamiento.dirty || tratamiento.touched)
+                ? 'is-invalid'
+                : ''
+            "
+                        type="text"
+                        [(ngModel)]="atenderCitaDTO.tratamiento"
+                        name="tratamiento"
+                        required
+                        class="form-control"
+                    />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Diagnostico: </label>
+                <div class="col-sm-10">
+                    <input
+                        #diagnostico="ngModel"
+                        [ngClass]="
+              diagnostico.invalid && (diagnostico.dirty || diagnostico.touched)
+                ? 'is-invalid'
+                : ''
+            "
+                        type="text"
+                        [(ngModel)]="atenderCitaDTO.diagnostico"
+                        name="diagnostico"
+                        required
+                        class="form-control"
+                    />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Fecha Atención:</label>
+                <input #fechaAtencion="ngModel"
+                       [ngClass]="{'form-control': true, 'is-invalid': fechaAtencion.invalid && (fechaAtencion.dirty || fechaAtencion.touched)}"
+                       type="text" name="horaFin" required [(ngModel)]="atenderCitaDTO.fechaAtencion"/>
+                <div class="invalid-feedback" *ngIf="fechaAtencion.invalid && (fechaAtencion.dirty || fechaAtencion.touched)">
+                    Campo obligatorio
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label"
+                >Nota Medica del Paciente:
+                </label>
+                <div class="col-sm-10">
+                    <input
+                        #notaMedica="ngModel"
+                        [ngClass]="
+              notaMedica.invalid && (notaMedica.dirty || notaMedica.touched)
+                ? 'is-invalid'
+                : ''
+            "
+                        type="text"
+                        [(ngModel)]="atenderCitaDTO.notasMedicas"
+                        name="notaMedica"
+                        required
+                        class="form-control"
+                    />
+                </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit" [disabled]="f.invalid">
+                <i class="fa-solid fa-circle-plus me-1"></i>Atender Cita
+            </button>
+        </form>
+    </div>
+</div>

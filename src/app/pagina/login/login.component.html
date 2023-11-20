@@ -1,0 +1,21 @@
+<div class="card">
+    <form class="rowg-3" #f="ngForm" (ngSubmit)="login()">
+<div class="container">
+    <label class="label">Iniciar Sesión</label>
+  </div>
+  <div class="container">
+    <label class="visually-hidden">Usuario</label>
+    <input type="text" class="form-control" id="inputUsuario" placeholder="Usuario" name="correo" [(ngModel)]="loginDTO.correo">
+  </div>
+  <div class="container">
+    <label for="inputPassword2" class="visually-hidden">Password</label>
+    <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password" [(ngModel)]="loginDTO.password">
+  </div>
+  <div class="container">
+    <p><a href="#" class="link-underline-primary">¿Olvido su contraseña?</a></p>
+    <button type="submit" class="btn btn-primary mb-3">Iniciar Sesion</button><br>
+      <label>¿Aún no tienes cuenta?</label>
+      <p><a href="#" class="link-underline-primary">Crear Cuenta</a></p>
+  </div>
+  </form>
+</div>

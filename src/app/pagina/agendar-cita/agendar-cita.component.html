@@ -1,0 +1,105 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <h5 class="mb-4">Gestionar Médicos</h5>
+            <div class="mb-3">
+                <label class="form-label">Especialidad:</label>
+                <select name="especialidad" required class="form-select" [(ngModel)]="agendarCita.especialidad"
+                        (change)="cargarMedicos(agendarCita.especialidad)">
+                    <option value="" selected>Seleccione una especialidad</option>
+                    <option [value]="item" *ngFor="let item of especialidad; index as i">{{item}}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="!agendarCita.especialidad">Seleccione una especialidad</div>
+            </div>
+            <div class="container" style="width: auto;">
+                <table class="table table-striped table-hover">
+                    <thead class="table-info">
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Especialidad</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                    <tr *ngFor="let item of medicos">
+                        <td>{{ item.codigo }}</td>
+                        <td>{{ item.nombre }}</td>
+                        <td>{{ item.especialidad }}</td>
+                        <td>
+                            <a (click)="seleccionarMedico(item)">
+                                <i class="fa-solid fa-circle-info me-2"></i>Seleccionar
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="btn-group" role="group">
+                    <button (click)="agendar(detallePacienteDTO.codigo, medicoSeleccionado.codigo)" class="btn btn-primary" type="submit">
+                        <i class="fa-solid fa-circle-plus me-1"></i>Agendar
+                    </button>
+                </div>
+                <app-alerta [alerta]="alerta"></app-alerta>
+            </div>
+        </div>
+
+        <div class="col-md-8" *ngIf="medicoSeleccionado">
+            <H5 class="mb-4">Agendar Cita</H5>
+            <form #f="ngForm">
+                <div class="mb-3">
+                    <label class="form-label">Nombre Paciente:</label>
+                    <input
+                        #nombre="ngModel"
+                        [ngClass]="
+              nombre.invalid && (nombre.dirty || nombre.touched)
+                ? 'is-invalid'
+                : ''
+            "
+                        type="text"
+                        name="nombre"
+                        class="form-control"
+                        required
+                        [(ngModel)]="detallePacienteDTO.nombre">
+                </div>
+
+                <!-- En el formulario HTML -->
+                <div class="mb-3">
+                    <label class="form-label">Nombre Medico:</label>
+                    <input
+                            type="text"
+                            name="nombreMedico"
+                            class="form-control"
+                            [(ngModel)]="medicoSeleccionado.nombre"
+                            readonly
+                    />
+                </div>
+
+             
+
+
+                <div class="mb-3">
+                            <label class="form-label">Hora inicio:</label>
+                    <input #horaInicio="ngModel"
+                           [ngClass]="{'form-control': true, 'is-invalid': horaInicio.invalid && (horaInicio.dirty || horaInicio.touched)}"
+                           type="datetime-local" name="horaFin" required [(ngModel)]="agendarCita.horario"/>
+                    <div class="invalid-feedback" *ngIf="horaInicio.invalid && (horaInicio.dirty || horaInicio.touched)">
+                        Campo obligatorio
+                    </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label class="col-sm-2 col-form-label">Motivo: </label>
+                            <div class="col-sm-10">
+            <textarea #motivo="ngModel"
+                      [ngClass]="motivo.invalid && (motivo.dirty || motivo.touched) ? 'is-invalid' : ''"
+                      type="text" [(ngModel)]="agendarCita.motivo" name="motivo" required
+                      class="form-control"></textarea>
+                            </div>
+                        </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
