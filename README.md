@@ -1,4 +1,4 @@
-# ProyectoFinal_Software2 (Frontend)
+# ProyectoFinal (Frontend)
 
 Integrantes:
 
