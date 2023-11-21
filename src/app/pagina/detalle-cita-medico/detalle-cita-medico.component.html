@@ -1,35 +1,60 @@
-<div class="card">
-  <div class="card-header ps-5 pt-4 pb-4 d-flex justify-content-center align-items-center">
-    <h5 class="mb-0">
-      <i class="fa-solid fa-user me-3"></i>Información de la Cita
-    </h5>
-  </div>
-  <div class="card-body p-5 justify-content-center align-items-center">
+ <div class="card-body p-5 justify-content-center align-items-center">
     <form #f="ngForm">
-      <table class="table">
-        <tbody>
-        <tr>
-          <th scope="row">Código:</th>
-          <td>{{ detalleCitaMedicoDTO?.codigo }}</td>
-        </tr>
-        <tr>
-          <th scope="row">Paciente:</th>
-          <td>{{ detalleCitaMedicoDTO?.nombrePaciente }}</td>
-        </tr>
-        <tr>
-          <th scope="row">Estado Cita:</th>
-          <td>{{ detalleCitaMedicoDTO?.estadoCita }}</td>
-        </tr>
-        <tr>
-          <th scope="row">Fecha cita:</th>
-          <td>{{ detalleCitaMedicoDTO?.fechaCita }}</td>
-        </tr>
-        <tr>
-          <th scope="row">Código paciente:</th>
-          <td>{{ detalleCitaMedicoDTO?.codigoPaciente }}</td>
-        </tr>
-        </tbody>
-      </table>
+        <div class="card">
+            <div class="card-header ps-5 pt-4 pb-4 d-flex justify-content-center align-items-center">
+                <h5 class="mb-0"><i class="fa-solid fa-clock me-3"></i>Cita</h5>
+            </div>
+            <div class="card-body p-5 justify-content-center align-items-center">
+                <div class="mb-3">
+                    <!-- Código -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Código:</label>
+                        <div>
+                            <label class="form-control">{{ detallesCitaMedicoDTO?.codigoCita }}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <!-- Paciente -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Medico:</label>
+                        <div>
+                            <label class="form-control">{{ detallesCitaMedicoDTO?.medico }}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <!-- Fecha de creación -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Motivo:</label>
+                        <div>
+                            <label class="form-control">{{ detallesCitaMedicoDTO?.Motivo }}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <!-- Fecha cita -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Fecha cita:</label>
+                        <div>
+                            <label class="form-control">{{ detallesCitaMedicoDTO?.horario }}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <!-- Hora cita -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Estado Cita:</label>
+                        <div>
+                            <label class="form-control">{{ detallesCitaMedicoDTO?.estadoCita }}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
-  </div>
 </div>

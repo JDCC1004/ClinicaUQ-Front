@@ -44,5 +44,8 @@ export class MedicosService {
     return this.http.get<MensajeDTO>(`${this.userUrl}/listar`);
   }
 
+  public listarCitas(codigo: number): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userUrl}/listar`);
+  }
 
 }

@@ -1,9 +1,10 @@
 export interface DetalleCitaMedicoDTO{
 
-    codigo: number;
-    codigoPaciente: number;
+    codigoCita: number;
     nombrePaciente: string;
-    fechaCita: string;
+    Motivo: string;
+    horario:string;
     estadoCita: string;
-
+    especialidad: string;
+    medico: string;
 }

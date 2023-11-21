@@ -74,11 +74,11 @@
                     />
                 </div>
 
-             
+
 
 
                 <div class="mb-3">
-                            <label class="form-label">Hora inicio:</label>
+                            <label class="form-label">Hora Cita:</label>
                     <input #horaInicio="ngModel"
                            [ngClass]="{'form-control': true, 'is-invalid': horaInicio.invalid && (horaInicio.dirty || horaInicio.touched)}"
                            type="datetime-local" name="horaFin" required [(ngModel)]="agendarCita.horario"/>

@@ -18,32 +18,27 @@ import {MedicosService} from "../../servicios/medicos.service";
 })
 export class DetalleCitaMedicoComponent {
 
-detalleCitaMedicoDTO: DetalleCitaMedicoDTO | undefined;
-  alerta!: Alerta;
+  detallesCitaMedicoDTO: DetalleCitaMedicoDTO | undefined;
   codigoCita!: number;
-
 
   constructor(private route: ActivatedRoute, private medicoService: MedicosService, private tokenService: TokenService, private clinicaService: ClinicaService){
 
 
     this.route.params.subscribe((params) => {
-      //this.codigoCita = params['codigoCita'];
-      const codigoCita = params['codigoCita'];
-      this.obtenerDatos(codigoCita)
+      this.codigoCita = params['codigo'];
     });
 
+    this.obtenerDatos();
   }
 
-  public obtenerDatos(codigoCita: number) {
-    this.medicoService.verDetalleCita(codigoCita).subscribe({
-    next: data => {
-    this.detalleCitaMedicoDTO = data.respuesta;
-    },
-    error: error => {
-    console.log(error);
-    }
+  public obtenerDatos() {
+    this.medicoService.verDetalleCita(this.codigoCita).subscribe({
+      next: data => {
+        this.detallesCitaMedicoDTO = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
     });
   }
-
-  //protected readonly DetalleCitaMedicoDTO = DetalleCitaMedicoDTO;
 }

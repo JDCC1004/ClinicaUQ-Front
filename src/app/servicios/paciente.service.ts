@@ -7,6 +7,8 @@ import { RegistroPQRSDTO } from '../modelo/registro-pqrs-dto';
 import { AgendarCitaDTO } from '../modelo/AgendarCitaDTO';
 import {MedicoPDTO} from "../modelo/Paciente/MedicoPDTO";
 import {RegistroCitaDTO} from "../modelo/Paciente/registro-cita-dto";
+import {NuevaPasswordDTO} from "../modelo/NuevaPasswordDTO";
+import {NuevaPasswordOlvidadaDTO} from "../modelo/NuevaPasswordOlvidadaDTO";
 
 @Injectable({
   providedIn: 'root'
@@ -66,6 +68,20 @@ export class PacienteService {
   public verDetalleCita(codigoCita: number): Observable<MensajeDTO> {
     return this.http.get<MensajeDTO>(
         `${this.userUrl}/listar/${codigoCita}`
+    );
+  }
+
+  public cambiarPassword(NuevaPasswordDTO: NuevaPasswordDTO): Observable<MensajeDTO> {
+    return this.http.post<MensajeDTO>(
+      `${this.userUrl}/cambiarPassword`,
+      NuevaPasswordDTO
+    );
+  }
+
+  public cambiarPasswordOlvidada( NuevaPasswordOlvidadaDTO: NuevaPasswordOlvidadaDTO): Observable<MensajeDTO> {
+    return this.http.post<MensajeDTO>(
+        `${this.userUrl}/cambiarPasswordOlvidada`,
+        NuevaPasswordOlvidadaDTO
     );
   }
 

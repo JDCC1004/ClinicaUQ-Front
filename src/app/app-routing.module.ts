@@ -29,10 +29,13 @@ const routes: Routes = [
   { path: "registro-medicos", component: RegistroMedicosComponent, canActivate: [RolesGuard], data: { expectedRole: ["admin"]}},
   { path: "detalle-pqrs", component: DetallePqrsComponent, canActivate:[RolesGuard], data: { expectedRole: ["paciente"]} },
   { path: "historial-citas-paciente", component: HistorialCitasPacienteComponent, canActivate:[RolesGuard], data: { expectedRole: ["paciente"]}},
-  {path: "detalle-cita", component:DetalleCitaComponent, canActivate:[RolesGuard], data: { expectedRole: ["paciente"]}},
-  {path: "atender-cita", component:AtenderCitaComponent,canActivate:[RolesGuard], data: { expectedRole: ["medico"]}},
-  {path: "detalle-cita-medico", component:DetalleCitaMedicoComponent, canActivate:[RolesGuard], data: {expectedRole: ["medico"]}},
-  {path: "dia-libre", component:DiaLibreComponent, canActivate:[RolesGuard], data: {expectedRole: ["medico"]}},
+  { path: "historial-citas", component: HistorialCitasComponent, canActivate:[RolesGuard], data: { expectedRole: ["medico"]}},
+  { path: "detalle-cita/:codigo", component:DetalleCitaComponent, canActivate:[RolesGuard], data: { expectedRole: ["paciente"]}},
+  { path: "atender-cita", component:AtenderCitaComponent,canActivate:[RolesGuard], data: { expectedRole: ["medico"]}},
+  {path: "detalle-cita-medico/:codigo", component:DetalleCitaMedicoComponent, canActivate:[RolesGuard], data: {expectedRole: ["medico"]}},
+  { path: "dia-libre", component:DiaLibreComponent, canActivate:[RolesGuard], data: {expectedRole: ["medico"]}},
+  { path: "cambiar-password", component: CambiarPasswordComponent,canActivate:[RolesGuard], data: {expectedRole: ["paciente"]} },
+  { path: "olvidar-password", component: OlvidarPasswordComponent},
   { path: "**", pathMatch: "full", redirectTo: "" }
 ];
 

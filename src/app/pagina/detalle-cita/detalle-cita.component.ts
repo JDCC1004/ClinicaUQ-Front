@@ -4,8 +4,9 @@ import { Alerta } from 'src/app/modelo/alerta';
 import { ClinicaService } from 'src/app/servicios/clinica.service';
 import { PacienteService } from 'src/app/servicios/paciente.service';
 import { TokenService } from 'src/app/servicios/token.service';
-import {RegistroCitaDTO} from "../../modelo/Paciente/registro-cita-dto";
-import {AuthService} from "../../servicios/auth.service";
+import { RegistroCitaDTO} from "../../modelo/Paciente/registro-cita-dto";
+import { AuthService} from "../../servicios/auth.service";
+import { DetalleCitaDTO} from "../../modelo/Paciente/DetalleCitaDTO";
 
 @Component({
   selector: 'app-detalle-cita',
@@ -33,6 +34,8 @@ export class DetalleCitaComponent {
     this.route.params.subscribe((params) => {
       this.codigoCita = params['codigo'];
     });
+
+    this.obtenerDatosCita();
   }
 
   public obtenerCita() {

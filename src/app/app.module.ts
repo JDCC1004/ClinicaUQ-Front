@@ -25,6 +25,9 @@ import { DiaLibreComponent } from './pagina/dia-libre/dia-libre.component';
 //import { GestionCitaComponent } from './pagina/gestion-cita/gestion-cita.component';
 import { GestionMedicosComponent } from './pagina/gestion-medicos/gestion-medicos.component';
 import { DetalleCitaMedicoComponent } from './pagina/detalle-cita-medico/detalle-cita-medico.component';
+import { CambiarPasswordComponent } from './pagina/cambiar-password/cambiar-password.component';
+import { OlvidarPasswordComponent } from './pagina/olvidar-password/olvidar-password.component';
+//import { FondoComponent } from './fondo/fondo.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { DetalleCitaMedicoComponent } from './pagina/detalle-cita-medico/detalle
     DiaLibreComponent,
     //GestionCitaComponent,
     GestionMedicosComponent,
-    DetalleCitaMedicoComponent
+    DetalleCitaMedicoComponent,
+    CambiarPasswordComponent,
+    OlvidarPasswordComponent,
+    
   ],
   imports: [
     BrowserModule,
