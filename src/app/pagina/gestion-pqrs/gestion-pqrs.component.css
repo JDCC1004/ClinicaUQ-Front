@@ -4,7 +4,7 @@
 }
 
 .card-header {
-    background-color: #007BFF;
+    background-color: #87C4FF;
     color: white;
 }
 
@@ -18,12 +18,12 @@
 
 /* Estilo para el botón "Crear" */
 .btn-success {
-    background-color: #28A745;
+    background-color: #87C4FF;
     color: white;
 }
 
 .btn-success:hover {
-    background-color: #1E7E34;
+    background-color: #87C4FF;
 }
 
 /* Estilo para la tabla */
@@ -32,7 +32,7 @@
 }
 
 .table thead {
-    background-color: #007BFF;
+    background-color: #87C4FF;
     color: white;
 }
 
@@ -43,14 +43,14 @@
 
 /* Estilo para los estados de las PQRS */
 .text-bg-success {
-    background-color: #28A745;
+    background-color: #87C4FF;
     color: white;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
 }
 
 .text-bg-danger {
-    background-color: #DC3545;
+    background-color: #87C4FF;
     color: white;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
@@ -75,7 +75,7 @@ a:hover {
 }
 
 .card-header {
-    background-color: #007BFF;
+    background-color: #87C4FF;
     color: white;
 }
 
@@ -89,12 +89,12 @@ a:hover {
 
 /* Estilo para el botón "Crear" */
 .btn-success {
-    background-color: #28A745;
+    background-color: #87C4FF;
     color: white;
 }
 
 .btn-success:hover {
-    background-color: #1E7E34;
+    background-color: #87C4FF;
 }
 
 /* Estilo para la tabla */
@@ -103,7 +103,7 @@ a:hover {
 }
 
 .table thead {
-    background-color: #007BFF;
+    background-color: #87C4FF;
     color: white;
 }
 
@@ -114,14 +114,14 @@ a:hover {
 
 /* Estilo para los estados de las PQRS */
 .text-bg-success {
-    background-color: #28A745;
+    background-color: #87C4FF;
     color: white;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
 }
 
 .text-bg-danger {
-    background-color: #DC3545;
+    background-color: #87C4FF;
     color: white;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;

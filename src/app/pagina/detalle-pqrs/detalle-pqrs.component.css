@@ -1,0 +1,72 @@
+/* Estilos para la tarjeta */
+.card {
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el encabezado de la tarjeta */
+.card-header {
+    background-color: #87C4FF;
+    color: white;
+    padding-left: 5%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+/* Estilos para el cuerpo de la tarjeta */
+.card-body {
+    padding: 5%;
+}
+
+/* Estilos para el botón "Crear" */
+.card-body button {
+    background-color: #87C4FF;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Estilos para el botón "Crear" al pasar el ratón */
+.card-body button:hover {
+    background-color: #87C4FF;
+}
+
+/* Estilos para la tabla */
+.card-body table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilos para las celdas de la tabla */
+.card-body table th, .card-body table td {
+    text-align: center;
+}
+
+/* Estilos para la clase de validación "text-bg-success" */
+.text-bg-success {
+    background-color: #87C4FF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Estilos para la clase de validación "text-bg-danger" */
+.text-bg-danger {
+    background-color: #87C4FF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Estilos para el enlace en la tabla */
+.card-body table a {
+    color: #0d6efd;
+    font-weight: 500;
+}
+
+/* Estilos para el enlace en la tabla al pasar el ratón */
+.card-body table a:hover {
+    text-decoration: underline;
+}

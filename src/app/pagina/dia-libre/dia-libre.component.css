@@ -1,0 +1,75 @@
+/* Estilos para la tarjeta */
+.card {
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el encabezado de la tarjeta */
+.card-header {
+    background-color: #87C4FF;
+    color: white;
+    padding-left: 5%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+/* Estilos para el cuerpo de la tarjeta */
+.card-body {
+    padding: 5%;
+}
+
+/* Estilos para la etiqueta "Comentario" */
+/*.card-body .mb-3.row label {*/
+/*  margin-bottom: 0;*/
+/*}*/
+
+/* Estilos para la entrada de texto "Comentario" */
+/*.card-body .mb-3.row input[type="text"] {*/
+/*  width: 100%;*/
+/*}*/
+
+/* Estilos para la fila "Fecha del Dia Libre" */
+.card-body .mb-3.row {
+    margin-bottom: 15px;
+}
+
+/* Estilos para la etiqueta "Fecha del Dia Libre" */
+.card-body .mb-3.row label {
+    font-weight: 500;
+}
+
+/* Estilos para el botón "Registrar Dia" */
+.card-body button {
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Estilos para el botón "Registrar Dia" al pasar el ratón */
+.card-body button:hover {
+    background-color: #0b5ed7;
+}
+
+/* Estilos para la clase de validación "is-invalid" */
+.is-invalid {
+    border-color: #dc3545;
+}
+
+/* Estilos para la alerta */
+.app-alerta {
+    margin-top: 15px;
+}
+
+/* Estilos para el enlace en la alerta */
+.app-alerta a {
+    color: #0d6efd;
+    font-weight: 500;
+}
+
+/* Estilos para el enlace en la alerta al pasar el ratón */
+.app-alerta a:hover {
+    text-decoration: underline;
+}

@@ -1,7 +1,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #14008d;
 }
 
 .container {
@@ -10,22 +10,22 @@ body {
 
 
 .table-info {
-    background-color: #17a2b8;
+    background-color: #14008d;
     color: #fff;
 }
 
 .table-group-divider {
-    background-color: #f8f9fa;
+    background-color: #14008d;
 }
 
 .btn-primary {
-    background-color: #007bff;
+    background-color: #14008d;
     border-color: #007bff;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #ffffff;
+    border-color: #14008d;
 }
 
 
@@ -39,7 +39,7 @@ body {
 
 
 .header {
-    background-color: #343a40;
+    background-color: #14008d;
     color: #fff;
     padding: 15px;
 }
@@ -55,7 +55,7 @@ body {
 
 
 .footer {
-    background-color: #343a40;
+    background-color: #14008d;
     color: #fff;
     padding: 10px 0;
 }
@@ -68,4 +68,4 @@ body {
     text-decoration: none;
     color: #ffcc00;
 }
-  
+

@@ -1,0 +1,64 @@
+
+body {
+    background-color: #87C4FF; /* Fondo principal */
+    color: #343a40; /* Texto principal */
+}
+
+/* Encabezado */
+.app-header {
+    background-color: #87C4FF; /* Azul */
+    padding: 1rem;
+}
+
+.app-header .logo-img {
+    max-height: 50px;
+}
+
+.app-header button {
+    margin: 0.5rem;
+}
+
+/* Contenido */
+.app-content {
+    background-color: #87C4FF; /* Blanco */
+    padding: 2rem;
+    border: 1px solid #dee2e6; /* Borde gris claro */
+    border-radius: 0.25rem;
+}
+
+/* Pie de página */
+.app-footer {
+    background-color: #ffffff; /* Azul */
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.8); /* Borde blanco transparente */
+}
+
+.app-footer .footer-social-icons i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: #ffffff; /* Iconos blancos */
+}
+
+.app-footer .footer-buttons button {
+    margin: 0.5rem;
+}
+
+/* Botones generales */
+.btn-primary {
+    background-color: #ffffff; /* Azul */
+    border-color: #ffffff; /* Borde azul */
+}
+
+.btn-primary:hover {
+    background-color: #ffffff; /* Azul más oscuro al pasar el mouse */
+    border-color: #ffffff;
+}
+
+/* Enlaces */
+a {
+    color: #ffffff; /* Azul para enlaces */
+}
+
+a:hover {
+    color: #ffffff; /* Azul más oscuro al pasar el mouse */
+}

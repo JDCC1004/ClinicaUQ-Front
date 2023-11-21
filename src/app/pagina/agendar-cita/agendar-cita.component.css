@@ -1,0 +1,53 @@
+/* Ajuste de estilos generales */
+.container {
+    margin-top: 5rem;
+}
+
+/* Estilos específicos para la tabla de médicos */
+.table-info th {
+    background-color: #87C4FF;
+    color: #fff;
+}
+
+/* Estilos para los botones */
+.btn-primary {
+    background-color: #87C4FF;
+    color: #fff;
+}
+
+/* Estilos para el formulario de agendar cita */
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+/* Estilos para el mensaje de error en el formulario */
+.invalid-feedback {
+    color: #dc3545;
+}
+
+/* Estilos para la tabla de médicos */
+.table {
+    width: auto;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+/* Ajuste de estilos para el botón de agendar cita */
+.btn-group {
+    margin-top: 1rem;
+}
+
+/* Estilos para el formulario de agendar cita en la columna derecha */
+.col-md-8 {
+    padding-left: 2rem;
+}
+
+/* Estilos para el formulario de agendar cita en la columna izquierda */
+.col-md-4 {
+    padding-right: 2rem;
+}
+
+/* Ajuste de estilos para el título "Agendar Cita" en la columna derecha */
+.col-md-8 h5 {
+    margin-bottom: 1.5rem;
+}
