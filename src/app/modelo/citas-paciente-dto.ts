@@ -1,6 +1,8 @@
-export class CitasPacienteDTO {
-    codigoCita!: number;
-    fecha!: string;
-    nombreMedico!: string;
-    especialidad!: string;
+export interface CitasPacienteDTO {
+    codigoCita: number;
+    estadoCita: string;
+    horario: string;
+    Motivo: string;
+    especialidad: string;
+    medico: string;
 }

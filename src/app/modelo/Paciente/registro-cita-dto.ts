@@ -1,9 +1,8 @@
-export class RegistroCitaDTO {
+export interface RegistroCitaDTO {
 
-    codigoMedico: string= "";
-    codigoCita!: number;
-    fecha: string= "";
-    motivo: string= "";
-    especialidad: string= "";
-    nombreMedico: string="";
+    codigoPaciente: number;
+    codigo: number;
+    fecha: string;
+    estadoCita: string;
+    nombrePaciente: string;
 }

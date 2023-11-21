@@ -1,80 +1,70 @@
+<div class="card-body p-5 justify-content-center align-items-center">
+    <form #f="ngForm">
+        <div class="card">
+            <div class="card-header ps-5 pt-4 pb-4 d-flex justify-content-center align-items-center">
+                <h5 class="mb-0"><i class="fa-solid fa-clock me-3"></i>Cita</h5>
+            </div>
+            <div class="card-body p-5 justify-content-center align-items-center">
+                <div class="mb-3">
+                    <!-- Código -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Código Cita:</label>
+                        <div>
+                            <label class="form-control">{{ detalleCitaDTO?.codigoCita }}</label>
+                        </div>
+                    </div>
+                </div>
 
-<div class="card">
-    <div class="card-header ps-5 pt-4 pb-4">
-        <h5 class="mb-0">
-            <i class="fa-solid fa-file-circle-plus me-2"></i>Detalle Cita
-        </h5>
-    </div>
-    <div class="card-body p-5">
-        <form #f="ngForm" (ngSubmit)="crearCita()">
-            <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Especilidad: </label>
-                <div class="col-sm-5">
-                    <input
+                <div class="mb-3">
+                    <!-- Paciente -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Estado Cita:</label>
+                        <div>
+                            <label class="form-control">{{ detalleCitaDTO?.estadoCita }}</label>
+                        </div>
+                    </div>
+                </div>
 
-                            type="String"
-                            name="especialidad"
-                            required
-                            readonly
-                            class="form-control"
-                            [(ngModel)]="registroCitaDTO.especialidad"
-                    />
+                <div class="mb-3">
+                    <!-- Fecha de creación -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Horario:</label>
+                        <div>
+                            <label class="form-control">{{ detalleCitaDTO?.horario }}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <!-- Fecha cita -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Motivo:</label>
+                        <div>
+                            <label class="form-control">{{ detalleCitaDTO?.Motivo }}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <!-- Hora cita -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Especialidad:</label>
+                        <div>
+                            <label class="form-control">{{ detalleCitaDTO?.especialidad }}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <!-- Hora cita -->
+                    <div class="d-flex flex-column">
+                        <label class="mb-2">Medico:</label>
+                        <div>
+                            <label class="form-control">{{ detalleCitaDTO?.medico }}</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Medico: </label>
-                <div class="col-sm-5">
-                    <input
-                            type="String"
-                            name="nombreMedico"
-                            required
-                            readonly
-                            class="form-control"
-                            [(ngModel)]="registroCitaDTO.nombreMedico"
-                    />
-                </div>
-            </div>
-
-            <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Fecha de la cita: </label>
-                <div class="col-sm-10">
-                    <input
-                        #fecha="ngModel"
-                        [ngClass]="
-              fecha.invalid && (fecha.dirty || fecha.touched)
-                ? 'is-invalid'
-                : ''
-            "
-                        type="String"
-                        [(ngModel)]="registroCitaDTO.fecha"
-                        name="fecha"
-                        required
-                        readonly
-                        class="form-control"
-                    />
-                </div>
-            </div>
-
-            <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Motivo: </label>
-                <div class="col-sm-10">
-          <textarea
-              #motivo="ngModel"
-              [ngClass]="
-              motivo.invalid && (motivo.dirty || motivo.touched)
-                ? 'is-invalid'
-                : ''
-            "
-              type="String"
-              [(ngModel)]="registroCitaDTO.motivo"
-              name="motivo"
-              required
-              readonly
-              class="form-control"
-          ></textarea>
-                </div>
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>

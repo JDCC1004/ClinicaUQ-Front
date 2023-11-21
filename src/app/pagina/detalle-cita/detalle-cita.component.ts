@@ -14,23 +14,18 @@ import { DetalleCitaDTO} from "../../modelo/Paciente/DetalleCitaDTO";
   styleUrls: ['./detalle-cita.component.css']
 })
 export class DetalleCitaComponent {
-  especialidades: string[];
-  registroCitaDTO: RegistroCitaDTO;
-  alerta!: Alerta;
+
+  detalleCitaDTO: DetalleCitaDTO | undefined;
   codigoCita!: number;
 
   constructor(
       private authService: AuthService,
       private pacienteService: PacienteService,
       private tokenService: TokenService,
-      private route:ActivatedRoute,
+      private route: ActivatedRoute,
       private clinicaService: ClinicaService
+  ) {
 
-  ){
-    this.registroCitaDTO = new RegistroCitaDTO();
-    this.obtenerCita();
-    this.especialidades = [];
-    this.cargarEspecialidades();
     this.route.params.subscribe((params) => {
       this.codigoCita = params['codigo'];
     });
@@ -38,10 +33,10 @@ export class DetalleCitaComponent {
     this.obtenerDatosCita();
   }
 
-  public obtenerCita() {
+  public obtenerDatosCita() {
     this.pacienteService.verDetalleCita(this.codigoCita).subscribe({
       next: data => {
-        this.registroCitaDTO = data.respuesta;
+        this.detalleCitaDTO = data.respuesta;
       },
       error: error => {
         console.log(error);
@@ -49,27 +44,4 @@ export class DetalleCitaComponent {
     });
   }
 
-
-  private cargarEspecialidades() {
-    this.clinicaService.listarEspecialidades().subscribe({
-      next: (data) => {
-        this.especialidades = data.respuesta;
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
-  }
-
-  public crearCita() {
-
-    this.pacienteService.crearCita(this.registroCitaDTO).subscribe({
-      next: (data) => {
-        this.alerta = { mensaje: data.respuesta, tipo: 'success' };
-      },
-      error: (error) => {
-        this.alerta = { mensaje: error.error.respuesta, tipo: 'danger' };
-      },
-    });
-  }
 }

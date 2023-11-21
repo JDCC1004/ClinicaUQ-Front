@@ -5,7 +5,6 @@ import { Alerta } from 'src/app/modelo/alerta';
 
 import { ClinicaService } from 'src/app/servicios/clinica.service';
 
-import { PacienteService } from 'src/app/servicios/paciente.service';
 import { TokenService } from 'src/app/servicios/token.service';
 import {DetalleCitaMedicoDTO} from "../../modelo/Medico/detalleCitaMedicoDTO";
 import {AuthService} from "../../servicios/auth.service";

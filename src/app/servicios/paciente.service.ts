@@ -67,7 +67,7 @@ export class PacienteService {
   }
   public verDetalleCita(codigoCita: number): Observable<MensajeDTO> {
     return this.http.get<MensajeDTO>(
-        `${this.userUrl}/listar/${codigoCita}`
+        `${this.userUrl}/detalleCita/${codigoCita}`
     );
   }
 

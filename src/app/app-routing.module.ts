@@ -16,6 +16,10 @@ import {DetalleCitaComponent} from "./pagina/detalle-cita/detalle-cita.component
 import {AtenderCitaComponent} from "./pagina/atender-cita/atender-cita.component";
 import {DetalleCitaMedicoComponent} from "./pagina/detalle-cita-medico/detalle-cita-medico.component";
 import {DiaLibreComponent} from "./pagina/dia-libre/dia-libre.component";
+import {HistorialCitasComponent} from "./pagina/historial-citas/historial-citas.component";
+import {CambiarPasswordComponent} from "./pagina/cambiar-password/cambiar-password.component";
+import {OlvidarPasswordComponent} from "./pagina/olvidar-password/olvidar-password.component";
+
 
 const routes: Routes = [
   { path: "registro-medicos", component: RegistroMedicosComponent},
