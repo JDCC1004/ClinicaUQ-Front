@@ -5,14 +5,11 @@
         <img src="assets/img/logo.png" />
         <span class="fs-4 ms-3 me-3">{{ title }}</span>
       </a>
-      <div *ngIf="!isLogged; else loggedInBlock">
+      <div *ngIf="!isLogged; else loggedInBlock" style="margin-left: auto;">
         <!-- Bloque de etiquetas para usuario no autenticado -->
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"></ul>
         <div class="text-end mb-md-0">
-          <button
-            type="button"
-            routerLink="/login"
-            class="btn btn-outline-light me-2">
+          <button type="button" routerLink="/login" class="btn btn-outline-light me-2">
             Login
           </button>
           <button type="button" routerLink="/registro" class="btn btn-success">
@@ -22,13 +19,38 @@
       </div>
 
       <ng-template #loggedInBlock>
-        <div *ngIf=" userType === 'paciente'">
+        <div *ngIf=" userType === 'paciente'" style="margin-left: auto;">
           <!-- Bloque de etiquetas para usuario paciente -->
           <ul class="nav col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a routerLink="crear-pqrs" class="nav-link px-2 text-white">Gestion PQRS</a></li>
-            <li><a routerLink="historial-citas-paciente" class="nav-link px-2 text-white">Historial Citas</a></li>
-            <li><a routerLink="agendar-cita" class="nav-link px-2 text-white">Agendar Cita</a></li>
-            <li><a routerLink="modificar-paciente" class="nav-link px-2 text-white">Actualizar Datos</a></li>
+            <div class="dropdown" style="margin-right: 20px;">
+              <button class="btn btn-outline-light me-2 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                PQRS
+              </button>
+              <ul class="dropdown-menu">
+                <li><a routerLink="crear-pqrs" class="nav-link-light px-2 text-black">Crear PQRS</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown" style="margin-right: 20px;">
+              <button class="btn btn-outline-light me-2 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Citas
+              </button>
+              <ul class="dropdown-menu">
+                <li><a routerLink="historial-citas-paciente" class="nav-link-light px-2 text-black">Historial Citas</a></li>
+                <li><a routerLink="agendar-cita" class="nav-link-light px-2 text-black">Agendar Cita</a></li>
+              </ul>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-outline-light me-2 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Cuenta
+              </button>
+              <ul class="dropdown-menu" style="margin-right: 20px;">
+                <li><a routerLink="modificar-paciente" class="nav-link-light px-2 text-black">Actualizar Datos</a></li>
+              </ul>
+            </div>
             <li>
               <ul>
                 <li><a routerLink="#" class="nav-link px-2 text-white">{{userName}}</a></li>
@@ -38,29 +60,60 @@
 
         </div>
 
-        <div *ngIf="userType === 'medico'">
+        <div *ngIf="userType === 'medico'" style="margin-left: auto;">
           <!-- Bloque de etiquetas para usuario médico -->
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a routerLink="historial-citas" class="nav-link px-2 text-white">Historial Citas</a></li>
-            <li><a routerLink="dia-libre" class="nav-link px-2 text-white">Agendar Dia Libre</a></li>
-            <li><a routerLink="atender-cita" class="nav-link px-2 text-white">Atender Cita</a></li>
+            <div class="dropdown" style="margin-right: 20px;">
+              <button class="btn btn-outline-light me-2 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Citas
+              </button>
+              <ul class="dropdown-menu">
+                <li><a routerLink="historial-citas" class="nav-link-light px-2 text-white">Historial Citas</a></li>
+                <li><a routerLink="atender-cita" class="nav-link-light px-2 text-black">Atender Cita</a></li>
+              </ul>
+            </div>
+            <div class="dropdown" style="margin-right: 20px;">
+              <button class="btn btn-outline-light me-2 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Cuenta
+              </button>
+              <ul class="dropdown-menu">
+                <li><a routerLink="dia-libre" class="nav-link-light px-2 text-black">Agendar Dia Libre</a></li>
+              </ul>
+            </div>
             <li>
-              <ul >
+              <ul>
                 <li><a routerLink="#" class="nav-link px-2 text-white">{{userName}}</a></li>
               </ul>
             </li>
           </ul>
         </div>
 
-        <div *ngIf="userType === 'admin'">
+        <div *ngIf="userType === 'admin'" style="margin-left: auto;">
           <!-- Bloque de etiquetas para usuario administrador -->
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a routerLink="#" class="nav-link px-2 text-white">PQRS</a></li>
-            <li><a routerLink="#" class="nav-link px-2 text-white">Gestionar Médico</a></li>
+            <div class="dropdown" style="margin-right: 20px;">
+              <button class="btn btn-outline-light me-2 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              PQRS
+            </button>
+            <ul class="dropdown-menu" style="margin-right: 20px;">
+            <li><a routerLink="#" class="nav-link-light px-2 text-black">PQRS</a></li>
+            </ul>
+            </div>
+            <div class="dropdown" style="margin-right: 20px;">
+              <button class="btn btn-outline-light me-2 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Médicos
+            </button>
+            <ul class="dropdown-menu" style="margin-right: 20px;">
+            <li><a routerLink="#" class="nav-link-light px-2 text-black">Gestionar Médico</a></li>
+            </ul>
+            </div>
             <li>
               <ul>
                 <li><a class="nav-link px-2 text-white">{{userName}}</a></li>
-                <li>{{userType}}</li>
               </ul>
             </li>
           </ul>
@@ -79,20 +132,20 @@
 
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-
-
-    <body>
-
-
     <div class="col-md-4 d-flex align-items-center">
       <span class="mb-3 mb-md-0 text-muted">&copy; 2023 Universidad del Quindío</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-x-twitter fs-5"></i></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram fs-5"></i></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-facebook fs-5"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://twitter.com/Uniquindio"><i
+            class="fa-brands fa-x-twitter fs-5"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/universidad_del_quindio/"><i
+            class="fa-brands fa-instagram fs-5"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/profile"><i
+            class="fa-brands fa-facebook fs-5"></i></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://github.com/JDCC1004/ClinicaUQ-Front"><i
+            class="fa-brands fa-github fs-5"></i></a></li>
     </ul>
-    </body>
+
   </footer>
 </div>
