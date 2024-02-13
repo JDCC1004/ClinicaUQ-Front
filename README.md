@@ -2,6 +2,6 @@
 
 Integrantes:
 
+- Julian David Cruz Cancimance
 - Santiago Muñoz
-- Julian David Cruz Cancimances
 - Daniela Torres Garzon
